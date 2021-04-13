@@ -1,13 +1,11 @@
 import React from 'react';
-import { ActivityIndicator, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
 Icon.loadFont();
-import { useStore } from './hooks/store';
 
-import MakeVoice from './pages/MakeVoice';
-import CadastrarResponse from './pages/CadastrarResponse';
-import Respostas from './pages/Respostas';
+import MakeVoice from '../pages/MakeVoice';
+import CadastrarResponse from '../pages/CadastrarResponse';
+import ResponseRoutes from './respostas.routes';
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +39,7 @@ function TabNavigation(): JSX.Element {
             />
             <Tab.Screen
                 name='Respostas'
-                component={Respostas}
+                component={ResponseRoutes}
                 options={{
                     tabBarLabel: 'Respostas',
                     tabBarIcon: ({ color, size}: PropsTabBarIcon) => CustomIcon('file-text', color, size),
@@ -51,16 +49,4 @@ function TabNavigation(): JSX.Element {
     )
 }
 
-export default function Routes(): JSX.Element{
-    const { loading } = useStore();
-
-    if(loading){
-        return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <ActivityIndicator size='large' color='blue' />
-            </View>
-        )
-    }
-
-    return <TabNavigation />
-}
+export default TabNavigation;

@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react'
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Response } from '../models/Response';
@@ -23,8 +24,19 @@ const styles = StyleSheet.create({
 })
 
 export default function ItemResponse({ response }: Props): JSX.Element {
+    const navigation = useNavigation()
+
+    function handlenavigateRespostaPage(){
+        navigation.navigate('RespostaPage', {
+            response
+        });
+    }
+
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity
+            onPress={handlenavigateRespostaPage}
+            style={styles.container}
+        >
             <Text style={styles.text}>{response.ouvir}</Text>
         </TouchableOpacity>
     )

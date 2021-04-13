@@ -10,8 +10,10 @@ export default function CadastrarResponse(): JSX.Element {
 
     async function handleSubmit(): Promise<void> {
         console.log('cadastrar');
-        const responseData = createResponse(ouvirText, respostaText);
+        const responseData = createResponse(ouvirText.trim(), respostaText.trim());
         await register(responseData);
+        setOuvirText('')
+        setRespostaText('')
     }
 
     return (

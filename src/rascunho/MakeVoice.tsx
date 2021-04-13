@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, View, TouchableHighlight} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
-import useStore from '../hooks/store';
 import Voice, { SpeechEndEvent, SpeechResultsEvent, SpeechStartEvent } from '@react-native-voice/voice';
 import Tts from "react-native-tts";
 

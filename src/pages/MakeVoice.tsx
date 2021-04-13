@@ -128,13 +128,13 @@ export default function MakeVoice(): JSX.Element {
           <Icon name="mic" color={ started === end ? '#bbbbff' : 'red'} size={50} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonAction} onPress={_stopRecognizing}>
-          <Text style={styles.action}>Para sincronização</Text>
+          <Text style={styles.action}>Parar sincronização</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonAction} onPress={_cancelRecognizing}>
           <Text style={styles.action}>Cancelar</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonAction} onPress={_destroyRecognizer}>
-          <Text style={styles.action}>Destroir</Text>
+          <Text style={styles.action}>Destruir</Text>
         </TouchableOpacity>
       </View>
     );
